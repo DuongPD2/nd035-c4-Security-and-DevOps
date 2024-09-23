@@ -36,7 +36,7 @@ public class CartController {
     private ItemRepository itemRepository;
 
     @PostMapping("/addToCart")
-    public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
+    public ResponseEntity<Cart> addToCart(@RequestBody ModifyCartRequest request) {
         log.info("Adding item to cart for user: {}", request.getUsername());
         User user = userRepository.findByUsername(request.getUsername());
         if (user == null) {
@@ -57,7 +57,7 @@ public class CartController {
     }
 
     @PostMapping("/removeFromCart")
-    public ResponseEntity<Cart> removeFromcart(@RequestBody ModifyCartRequest request) {
+    public ResponseEntity<Cart> removeFromCart(@RequestBody ModifyCartRequest request) {
         log.info("Removing item from cart for user: {}", request.getUsername());
         User user = userRepository.findByUsername(request.getUsername());
         if (user == null) {
